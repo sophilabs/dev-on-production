@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+	Devvelopment on Production
+	November 2012
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Development on Production | Sophilabs</title>
+    <meta name="description" content="Development on Production." />
+    <meta name="author" content="Sophilabs" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+        <div id="introduction" class="step" data-x="-4500" data-y="-1500">
+            <h1><code>dev=pro</code></h1>
+            <p><a href="//github.com/ssassi">@ssassi</a> and <a href="//github.com/pricco">@pricco</a></p>
+        </div>
+        <div id="proscons" class="step" data-x="-3000" data-y="-1500">
+            <h1>Dev Machine</h1>
+            <ul>
+                <li><span class="plus">+</span> Perfomance</li>
+                <li><span class="plus">+</span> Easy Debug</li>
+                <li><span class="minus">-</span> DBs and Libraries Versions</li>
+                <li><span class="minus">-</span> Bootstrap time</li>
+                <li><span class="minus">-</span> Environment <code>DevA != DevB</code></li>
+                <li><span class="minus">-</span> Environment.clone() <code>NotImplementedError</code></li>
+            </ul>
+        </div>
+        <div id="worksonmymachine" class="step" data-x="-3000" data-y="0" data-rotate="90" data-scale="2">
+            <img src="http://cdn.memegenerator.net/instances/400x/23612285.jpg">
+        </div>
+        <div id="virtualenv" class="step slide" data-x="-1500" data-y="-1500">
+            <h1>First Step - VirtualEnv</h1>
+            <p><code>virtualenv</code> is a tool to create isolated Python environments.</p>
+        </div>
+        <div id="puppet" class="step slide" data-x="0" data-y="-1500">
+            <h1>2. Puppet</h1>
+        </div>
+        <div id="vagrant" class="step slide" data-x="1500" data-y="-1500">
+            <h1>Vagrant</h1>
+            <img src="http://vagrantup.com/static/images/hippie.png">
+        </div>
+        <div id="vagrantpuppet" class="step slide" data-x="3000" data-y="-1500">
+            <h1>Puppet on Vagrant</h1>
+<code class="pre console">$ vagrant provision</code>
+<code class="pre">Vagrant::Config.run do |config|
+
+    config.vm.host_name = "dev_on_production"
+    config.vm.box = "lucid64"
+    config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
+    config.vm.forward_port 80, 8000
+    config.vm.share_folder "app", "/opt/app", "."
+    
+    <strong>config.vm.provision :puppet do |puppet|
+        puppet.manifests_path = "puppet"
+        puppet.module_path = "puppet/modules"
+        puppet.manifest_file  = "vagrantlucid64.pp"
+        puppet.options = "--verbose --debug"
+    end</strong>
+end</code>
+        </div>
+        <div id="arquictecture">
+
+        </div>
+        <div id="fabric" class="step slide" data-x="4000" data-y="-1500">
+            <h1>Remote update!</h1>
+        </div>
+        <div id="debug" class="step slide" data-x="5000" data-y="-1500">
+            <h1>Debug?</h1>
+            <ul>
+                <li>http://www.jetbrains.com/pycharm/webhelp/remote-debugging-2.html</li>
+                <li>http://pydev.org/manual_adv_remote_debugger.html</li>
+        </div>
+        <div id="end" class="step" data-x="0" data-y="10000" data-rotate="90" data-scale="5">
+            <img src="http://octodex.github.com/images/pythocat.png">
+            <a href="//github.com/sophilabs/dev-on-production">sophilabs/dev-on-production</a>
+        </div>
+    </div>
+
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+</body>
+</html>

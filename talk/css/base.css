@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 740px;
+    background: rgb(215, 215, 215);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));    
+}
+
+a {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    color: #D14;
+}
+
+/*
+ * fallback message style
+ */
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+    
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/*
+ * step style
+ */
+
+.step {
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    padding: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+    font-size: 40px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.3;
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active {
+    opacity: 1;
+}
+
+
+/*
+ * Slide style
+ */
+.slide {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    color: rgb(102, 102, 102);
+}
+
+h1 {
+    margin: 0 0 20px 0;
+}
+
+code {
+    font-size: 40px;
+}
+
+code.pre {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    display: block;
+    font-size: 16px;
+    padding: 4px 10px;
+}
+
+code.pre.console {
+    background-color: #000;
+    color: #fff;
+}
+
+#introduction {
+    padding: 40px 60px;
+    text-align: center;
+}
+
+#introduction h1 {
+    text-align: center;
+}
+
+#introduction h1 code {
+    font-size: 200px;
+    font-weight: normal;
+}
+
+#introduction p {    
+    text-align: center;
+    font-size: 24px;
+}
+
+#introduction p code {
+    font-size: 30px;
+}
+
+#proscons {
+    
+}
+
+#proscons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#proscons ul li {
+    padding: 0;
+    margin: 0 0 6px 0;
+}
+
+#proscons .plus,
+#proscons .minus {
+    font-size: 48px;
+    color: #D14;
+    background-color: #F7F7F9;
+    height: 54px;
+    line-height: 54px;
+    width: 54px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#end {
+    width: 900px;
+    height: 500px;
+    padding: 40px 60px;
+}
+
+#end img {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+#end a {
+    display: block;
+    margin: 20px; auto;
+    text-align: center;
+}
+
+
+#worksonmymachine img {
+    width: 600px;
+    display: block;
+    margin: 0 auto;
+}
