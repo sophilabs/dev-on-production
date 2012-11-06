@@ -23,6 +23,11 @@ body {
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));    
 }
 
+a {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    color: #D14;
+}
+
 /*
  * fallback message style
  */
@@ -54,16 +59,17 @@ body {
 
 .step {
     position: relative;
-    width: 900px;
+    width: 1000px;
+    height: 700px;
     padding: 40px;
-    margin: 20px auto;
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
     -ms-box-sizing:     border-box;
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.5;
+    letter-spacing: -1px;
 }
 
 .impress-enabled .step {
@@ -85,24 +91,37 @@ body {
  * Slide style
  */
 .slide {
-    display: block;
-
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
     color: rgb(102, 102, 102);
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+}
+
+code {
+    font-size: 40px;
+}
+
+code.pre {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    display: block;
+    font-size: 16px;
+    padding: 4px 10px;
+}
+
+code.pre.console {
+    background-color: #000;
+    color: #fff;
 }
 
 #introduction {
-    width: 900px;
-    height: 700px;
     padding: 40px 60px;
     text-align: center;
 }
@@ -125,6 +144,35 @@ body {
     font-size: 30px;
 }
 
+#proscons {
+    
+}
+
+#proscons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#proscons ul li {
+    padding: 0;
+    margin: 0 0 6px 0;
+}
+
+#proscons .plus,
+#proscons .minus {
+    font-size: 48px;
+    color: #D14;
+    background-color: #F7F7F9;
+    height: 54px;
+    line-height: 54px;
+    width: 54px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-block;
+}
+
 #end {
     width: 900px;
     height: 500px;
@@ -141,4 +189,11 @@ body {
     display: block;
     margin: 20px; auto;
     text-align: center;
+}
+
+
+#worksonmymachine img {
+    width: 600px;
+    display: block;
+    margin: 0 auto;
 }
