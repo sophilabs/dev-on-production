@@ -1,0 +1,4 @@
+.rvmrc
+.vagrant
+local_settings.py
+*.pyc

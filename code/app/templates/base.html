@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+{% load url from future %}
+{% load static from staticfiles %}
+
+<head>
+    <title>dev=pro</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" media="all">
+    {% endblock css %}
+
+</head>
+<body>
+    {% block content %}{% endblock %}
+    {% block js %}{% endblock js %}
+</body>
+</html>
