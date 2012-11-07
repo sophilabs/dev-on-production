@@ -1,0 +1,76 @@
+<% if target != 'pro' %>
+upstream devpro_backend {
+    server 127.0.0.1:8000;
+}
+<% end %>
+
+server {
+
+    listen 80;
+    server_name <%= domain %>;
+
+    <% if target == 'pro' %>
+
+    access_log <%= log_dir %>/nginx_access.log;
+    error_log <%= log_dir %>/nginx_error.log;
+
+    gzip             on;
+    gzip_min_length  1000;
+    gzip_proxied     any;
+    gzip_types       text/css image/png image/jpeg image/jpg application/x-javascript;
+    gzip_disable     "MSIE [1-6]\.";
+
+    location ~ ^(/js/.*|/css/.*|/img/.*)$ {
+        root <%= source_dir %>/code/app/collectedstatic;
+        expires max;
+    }
+
+    location /favicon.ico {
+        root <%= base_dir %>/source/web/collectedstatic/img;
+    }
+
+    location / {
+        uwsgi_pass unix:<%= run_dir %>/uwsgi.sock;
+        include /etc/nginx/uwsgi_params;
+    }
+    <% else %>
+
+    client_max_body_size 4G;
+    open_file_cache off;
+    sendfile off;
+    keepalive_timeout 5;
+
+    location ~* /static/(.*) {
+        root /opt/devpro/code/app/static;
+        try_files /$1 @devpro;
+    }
+
+    location ~* /media/(.*) {
+        root /opt/devpro/code/app/media;
+        try_files /$1 @devpro;
+    }
+
+    location ~* / {
+        proxy_redirect   off;
+        proxy_set_header Host <%= domain %>:8000;
+        proxy_set_header X-Real-IP        $remote_addr;
+        proxy_set_header X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header X-Magic-Header   "secret";
+        proxy_set_header X-Forwarded-Protocol http;
+
+        proxy_pass http://devpro_backend;
+    }
+
+    location @devpro {
+        proxy_redirect   off;
+        proxy_set_header Host <%= domain %>:8000;
+        proxy_set_header X-Real-IP        $remote_addr;
+        proxy_set_header X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header X-Magic-Header   "secret";
+        proxy_set_header X-Forwarded-Protocol http;
+
+        proxy_pass http://devpro_backend;
+    }
+    <% end %>
+
+}

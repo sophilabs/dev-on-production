@@ -1,0 +1,15 @@
+Vagrant::Config.run do |config|
+
+  config.vm.host_name = "devpro"
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.forward_port 80, 8000
+  config.vm.share_folder "project", "/opt/devpro/source", "../."
+
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet"
+    puppet.module_path = "puppet/modules"
+    puppet.manifest_file  = "dev.pp"
+    puppet.options = "--verbose --debug"
+  end
+end
