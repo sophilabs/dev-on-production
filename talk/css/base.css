@@ -68,7 +68,7 @@ a {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
     font-size: 40px;
-    line-height: 1.5;
+    line-height: 1.2;
     letter-spacing: -1px;
 }
 
@@ -99,7 +99,8 @@ a {
 }
 
 h1 {
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
+    font-size: 56px;
 }
 
 code {
@@ -112,13 +113,53 @@ code.pre {
     white-space: pre;
     white-space: pre-wrap;
     display: block;
-    font-size: 16px;
-    padding: 4px 10px;
+    font-size: 18px;
+    padding: 10px 10px;
+    margin: 0 0 20px 0;
 }
 
 code.pre.console {
     background-color: #000;
     color: #fff;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+ul .plus,
+ul .minus {
+    font-size: 48px;
+    background-color: #F7F7F9;
+    height: 54px;
+    line-height: 54px;
+    width: 54px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+ul .plus {
+    color: #D14;
+}
+ul .minus {
+    color: #333;
+}
+
+p.definition {
+    text-align: left;
+    margin: 0 0 20px 0;
+    padding: 10px 10px 10px 20px;
+    border-left: 4px solid #999;
 }
 
 #introduction {
@@ -135,48 +176,39 @@ code.pre.console {
     font-weight: normal;
 }
 
-#introduction p {    
+#introduction .names {
+    display: block;
+    margin: 140px auto 0;
+    width: 400px;
+    height: 60px;
+}
+
+#introduction .names span {
+    display: block;
+    float: left;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
     text-align: center;
-    font-size: 24px;
 }
 
-#introduction p code {
-    font-size: 30px;
-}
-
-#proscons {
-    
-}
-
-#proscons ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#proscons ul li {
-    padding: 0;
-    margin: 0 0 6px 0;
-}
-
-#proscons .plus,
-#proscons .minus {
-    font-size: 48px;
-    color: #D14;
-    background-color: #F7F7F9;
-    height: 54px;
-    line-height: 54px;
-    width: 54px;
+#introduction .company {
+    display: block;
+    margin: 60px auto 0;
+    width: 400px;
     text-align: center;
-    font-weight: bold;
-    border-radius: 10px;
-    display: inline-block;
 }
 
 #end {
     width: 900px;
-    height: 500px;
-    padding: 40px 60px;
+    height: 600px;
+    padding: 20px 60px;
+}
+
+#end h1 {
+    color: #D14;
+    text-align: center;
+    margin: 0 0 40px 0;
 }
 
 #end img {
@@ -187,7 +219,7 @@ code.pre.console {
 
 #end a {
     display: block;
-    margin: 20px; auto;
+    margin: 20px;
     text-align: center;
 }
 
@@ -196,4 +228,54 @@ code.pre.console {
     width: 600px;
     display: block;
     margin: 0 auto;
+}
+
+#architecture {
+    width: 1100px;
+    height: 620px;
+}
+
+#architecture .dev,
+#architecture .test,
+#architecture .pro {
+    width: 280px;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#architecture .pro .env {
+    margin: 106px 0 102px 0;
+}
+
+#architecture .vm {
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 10px 10px 0 0;
+    margin: 20px 0 0 0;
+}
+
+#architecture .vagrant {
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+#architecture .env {
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+}
+
+#architecture .title {
+    text-align: center;
+    display: block;
+    color: #D14;
+    font-weight: bold;
+    margin: 0;
+    font-size: 30px;
+    line-height: 45px;
 }
