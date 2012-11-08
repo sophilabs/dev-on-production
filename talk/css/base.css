@@ -219,8 +219,9 @@ p.definition {
 
 #end a {
     display: block;
-    margin: 20px;
+    margin: 40px 0 0 0;
     text-align: center;
+    font-size: 32px;
 }
 
 
@@ -235,9 +236,7 @@ p.definition {
     height: 620px;
 }
 
-#architecture .dev,
-#architecture .test,
-#architecture .pro {
+#architecture .machine {
     width: 280px;
     float: left;
     margin: 10px;
@@ -252,20 +251,20 @@ p.definition {
 
 #architecture .vm {
     padding: 20px;
-    background-color: #eee;
+    background-color: #e969a8;
     border-radius: 10px 10px 0 0;
     margin: 20px 0 0 0;
 }
 
 #architecture .vagrant {
-    background-color: #ddd;
+    background-color: #e93a90;
     padding: 20px;
     border-radius: 0 0 10px 10px;
 }
 
 #architecture .env {
     padding: 20px;
-    background-color: #ddd;
+    background-color: #d30068;
     border-radius: 10px;
     margin: 20px 0 0 0;
 }
@@ -273,9 +272,38 @@ p.definition {
 #architecture .title {
     text-align: center;
     display: block;
-    color: #D14;
-    font-weight: bold;
     margin: 0;
     font-size: 30px;
     line-height: 45px;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+#architecture .machine .title {
+    color: #d30068;
+}
+
+#architecture .vm .title,
+#architecture .vagrant .title,
+#architecture .env .title {
+    color: #fff;
+}
+
+#architecture .remote {
+    width: 958px;
+    margin: 490px auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #9e2862;
+    font-size: 26px;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+#problems ul {
+    margin: 60px 0 0 0;
+}
+
+#problems .monkey {
+    float: right;
+    margin: 60px 0 0 0;
 }
