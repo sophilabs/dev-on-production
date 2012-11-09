@@ -22,7 +22,7 @@
 
     <div id="impress">
         <div id="introduction" class="step" data-x="-4500" data-y="-1500">
-            <h1><code>dev=pro</code></h1>
+            <h1><code>dev==pro</code></h1>
             <div class="names">
                 <span>Sebastián Sassi</span> <a class="github" href="//github.com/ssassi">@ssassi</a>
             </div>
@@ -41,8 +41,8 @@
                 <li><span class="minus">✘</span> Bootstrap time</li>
                 <li><span class="minus">✘</span> Replicate changes</li>
 				<li><span class="minus">✘</span> Healthy coexistence</li>
-                <li><span class="minus">✘</span> Clone envs</li>
-                <li><span class="minus">✘</span> Restore envs</li>
+                <li><span class="minus">✘</span> Share envs</li>
+                <li><span class="minus">✘</span> Backup envs</li>
             </ul>
         </div>
         <div id="virtualenv" class="step slide" data-x="-1500" data-y="-1500">
@@ -92,7 +92,7 @@ $ deactivate
 			<p class="footer-notes">MIT License <a href="http://vagrantup.com">vagrantup.com</a></p>
         </div>
         <div id="vagrantpuppet" class="step slide" data-x="3000" data-y="-1500">
-            <h1>Vagrant & Puppet</h1>
+            <h1>Vagrant Puppet</h1>
 			<img class="vagrant-puppet" src="img/puppet.jpg" />
 <code class="pre vagrant">Vagrant::Config.run do |config|
 
@@ -100,14 +100,14 @@ $ deactivate
     config.vm.box = "precise64"
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
     config.vm.forward_port 80, 8000
-    config.vm.share_folder "source", "/opt/devpro/sources", "."
+    <strong>config.vm.share_folder "project", "/opt/devpro/source", "../."</strong>
 
-    <strong>config.vm.provision :puppet do |puppet|
+    config.vm.provision :puppet do |puppet|
         puppet.manifests_path = "puppet"
         puppet.module_path = "puppet/modules"
-        puppet.manifest_file  = "dev.pp"
+        <strong>puppet.manifest_file  = "dev.pp"</strong>
         puppet.options = "--verbose --debug"
-    end</strong>
+    end
 end</code>
 <code class="pre console">$ vagrant provision</code>
         </div>
@@ -187,11 +187,11 @@ def list():
         <div id="summary" class="step slide" data-x="7500" data-y="-1500">
             <h1>Summary</h1>
             <ul>
-                <li><span class="plus">✔</span> Bootstrap time <code>puppet</code></li>
-                <li><span class="plus">✔</span> Replicate changes <code>fabric</code></li>
+                <li><span class="plus">✔</span> Bootstrap time <code>vagrant + puppet</code></li>
+                <li><span class="plus">✔</span> Replicate changes <code>fabric + puppet</code></li>
                 <li><span class="plus">✔</span> Healthy coexistence <code>vagrant</code></li>
-                <li><span class="plus">✔</span> Clone envs <code>vagrant</code></li>
-                <li><span class="plus">✔</span> Restore envs <code>vagrant</code></li>
+                <li><span class="plus">✔</span> Share envs <code>vagrant</code></li>
+                <li><span class="plus">✔</span> Backup envs <code>vagrant</code></li>
                 <li><span class="plus">✔</span> Easy debugging <code>pycharm or pydev</code></li>
                 <li><span class="plus">✔</span> Rapid development <code>SSD</code></li>
             </ul>
@@ -199,7 +199,7 @@ def list():
         <div id="end" class="step" data-x="0" data-y="10000" data-rotate="90" data-scale="5">
             <h1>Thanks!</h1>
             <img src="img/pythocat.png">
-            <a href="//github.com/sophilabs/dev-on-production">github.com/sophilabs/dev-on-production</a>
+            <a href="http://github.com/sophilabs/dev-on-production">github.com/sophilabs/dev-on-production</a>
         </div>
     </div>
 

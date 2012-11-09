@@ -260,6 +260,7 @@ p.definition {
     background-color: #e969a8;
     border-radius: 10px 10px 0 0;
     margin: 20px 0 0 0;
+    box-shadow: 12px -11px 0 0 #F3A5CB;
 }
 
 #architecture .vagrant {
