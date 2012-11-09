@@ -4,11 +4,10 @@ class test {
         target => "test",
         base_dir => "/opt/devpro",
         domain => "test.devpro.sophilabs.com",
-        user => "jenkins",
-        group => "jenkins";
+        user => "vagrant",
+        group => "vagrant";
     }
 
 }
-
 
 class { "test": }

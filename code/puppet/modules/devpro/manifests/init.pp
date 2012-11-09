@@ -1,12 +1,12 @@
 class devpro ($target, $domain, $base_dir, $user, $group) {
 
-    $source_dir = "$base_dir/source"
-    $log_dir = "$base_dir/log"
-    $run_dir = "$base_dir/run"
-    $venv_dir = "$base_dir/venv"
+    $source_dir = "${base_dir}/source"
+    $log_dir = "${base_dir}/log"
+    $run_dir = "${base_dir}/run"
+    $venv_dir = "${base_dir}/venv"
 
-    $code_dir = "$source_dir/code"
-    $app_dir = "$source_dir/code/app"
+    $code_dir = "${source_dir}/code"
+    $app_dir = "${code_dir}/app"
 
     Exec {
         path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
