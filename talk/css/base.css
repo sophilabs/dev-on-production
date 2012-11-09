@@ -103,6 +103,11 @@ h1 {
     font-size: 56px;
 }
 
+h2 {
+    margin: 0 0 30px 0;
+    font-size: 36px;
+}
+
 code {
     font-size: 40px;
 }
@@ -184,12 +189,13 @@ p.definition {
 }
 
 #introduction .names span {
-    display: block;
-    float: left;
-    width: 200px;
     height: 60px;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
+}
+
+#introduction .names a.github {
+	font-size: 22px;
 }
 
 #introduction .company {
@@ -254,6 +260,7 @@ p.definition {
     background-color: #e969a8;
     border-radius: 10px 10px 0 0;
     margin: 20px 0 0 0;
+    box-shadow: 12px -11px 0 0 #F3A5CB;
 }
 
 #architecture .vagrant {
@@ -306,4 +313,23 @@ p.definition {
 #problems .monkey {
     float: right;
     margin: 60px 0 0 0;
+}
+.footer-notes {
+	font-size: 20px;
+	float: right;
+}
+.footer-notes.puppet {
+	margin-top: -35px;
+}
+img.vagrant-puppet {
+	float: right;
+	width: 30%;
+}
+code.pre.vagrant {
+	width: 65%;
+}
+img.ssd {
+	height: 80%;
+	margin: 0 auto;
+	display: block;
 }
