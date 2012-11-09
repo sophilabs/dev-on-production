@@ -24,8 +24,7 @@
         <div id="introduction" class="step" data-x="-4500" data-y="-1500">
             <h1><code>dev=pro</code></h1>
             <div class="names">
-                <span>Sebastián Sassi<br><a href="//github.com/ssassi">@ssassi</a></span>
-                <span>Pablo Ricco<br><a href="//github.com/pricco">@pricco</a></span>
+                <span>Sebastián Sassi</span> <a class="github" href="//github.com/ssassi">@ssassi</a>
             </div>
             <div class="company">
                 <a href="//github.com/sophilabs">@sophilabs</a>
@@ -60,6 +59,7 @@ $ deactivate
                 <li><span class="plus">+</span> Isolated python environments</li>
                 <li><span class="minus">-</span> Only python packages</li>
             </ul>
+			<p class="footer-notes">MIT style license <a href="http://www.virtualenv.org">virtualenv.org</a></p>
         </div>
         <div id="puppet" class="step slide" data-x="0" data-y="-1500">
             <h1>Setup Env: Puppet</h1>
@@ -70,9 +70,11 @@ $ deactivate
             <ul>
                 <li><span class="plus">+</span> Used with any type of packages</li>
                 <li><span class="plus">+</span> Reproducible environment</li>
+				<li><span class="plus">+</span> Documented configuration</li>
                 <li><span class="minus">-</span> Learn Puppet</li>
                 <li><span class="minus">-</span> No coexistence</li>
             </ul>
+			<p class="footer-notes puppet">Apache 2.0 License <a href="http://puppetlabs.com">puppetlabs.com</a></p>
         </div>
         <div id="vagrant" class="step slide" data-x="1500" data-y="-1500">
             <h1>Isolated Env: Vagrant</h1>
@@ -84,12 +86,15 @@ $ deactivate
             <ul>
                 <li><span class="plus">+</span> Isolated environment</li>
                 <li><span class="plus">+</span> Shareable environment</li>
-                <li><span class="plus">-</span> Perfomance</li>
+                <li><span class="plus">-</span> Performance</li>
+				<li><span class="plus">-</span> Configuration</li>
             </ul>
+			<p class="footer-notes">MIT License <a href="http://vagrantup.com">vagrantup.com</a></p>
         </div>
         <div id="vagrantpuppet" class="step slide" data-x="3000" data-y="-1500">
             <h1>Vagrant & Puppet</h1>
-<code class="pre">Vagrant::Config.run do |config|
+			<img class="vagrant-puppet" src="img/puppet.jpg" />
+<code class="pre vagrant">Vagrant::Config.run do |config|
 
     config.vm.host_name = "dev_on_production"
     config.vm.box = "precise64"
@@ -117,6 +122,7 @@ env.user = 'devpro'
 def list():
     run('ls')</code>
 <code class="pre console">$ fab list</code>
+<p class="footer-notes">Berkeley-style License <a href="http://fabfile.org">fabfile.org</a></p>
         </div>
         <div id="architecture" class="step" data-x="0" data-y="5000">
             <div class="machine dev">
@@ -159,7 +165,7 @@ def list():
                 Fabric
             </div>
         </div>
-        <div id="debug" class="step slide" data-x="6000" data-y="-1500">
+        <div id="debug" class="step slide" data-x="6000" data-y="-3000">
             <h1>Debug? Sure</h1>
             <ul>
                 <li><strong>PyDev</strong>
@@ -174,17 +180,20 @@ def list():
                 </li>
             </ul>
         </div>
+		<div id="ssd" class="step slide" data-x="7500" data-y="-3000">
+            <h1>Performance?</h1>
+			<img class="ssd" src="img/ssd.jpg">
+        </div>
         <div id="summary" class="step slide" data-x="7500" data-y="-1500">
             <h1>Summary</h1>
             <ul>
-                <li><span class="plus">✔</span> Bootstrap time <code>puppet or vm</code></li>
-                <li><span class="plus">✔</span> Multiple devs <code>puppet + virtualenv</code></li>
-                <li><span class="plus">✔</span> Replicate changes <code>fabric + puppet</code></li>
+                <li><span class="plus">✔</span> Bootstrap time <code>puppet</code></li>
+                <li><span class="plus">✔</span> Replicate changes <code>fabric</code></li>
+                <li><span class="plus">✔</span> Healthy coexistence <code>vagrant</code></li>
                 <li><span class="plus">✔</span> Clone envs <code>vagrant</code></li>
-                <li><span class="plus">✔</span> Multiple envs <code>vagrant</code></li>
-                <li><span class="plus">✔</span> Restorable env <code>vagrant</code></li>
-                <li><span class="minus">✘</span> Rapid development</li>
-                <li><span class="minus">✘</span> Easy debugging</li>
+                <li><span class="plus">✔</span> Restore envs <code>vagrant</code></li>
+                <li><span class="plus">✔</span> Easy debugging <code>pycharm or pydev</code></li>
+                <li><span class="plus">✔</span> Rapid development <code>SSD</code></li>
             </ul>
         </div>
         <div id="end" class="step" data-x="0" data-y="10000" data-rotate="90" data-scale="5">
