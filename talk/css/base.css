@@ -67,7 +67,7 @@ a {
     -ms-box-sizing:     border-box;
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
-    font-size: 40px;
+    font-size: 36px;
     line-height: 1.2;
     letter-spacing: -1px;
 }
@@ -101,6 +101,11 @@ a {
 h1 {
     margin: 0 0 30px 0;
     font-size: 56px;
+}
+
+h2 {
+    margin: 0 0 30px 0;
+    font-size: 36px;
 }
 
 code {
@@ -172,7 +177,7 @@ p.definition {
 }
 
 #introduction h1 code {
-    font-size: 200px;
+    font-size: 180px;
     font-weight: normal;
 }
 
@@ -184,17 +189,18 @@ p.definition {
 }
 
 #introduction .names span {
-    display: block;
-    float: left;
-    width: 200px;
     height: 60px;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
+}
+
+#introduction .names a.github {
+	font-size: 22px;
 }
 
 #introduction .company {
     display: block;
-    margin: 60px auto 0;
+    margin: 0 auto;
     width: 400px;
     text-align: center;
 }
@@ -254,6 +260,7 @@ p.definition {
     background-color: #e969a8;
     border-radius: 10px 10px 0 0;
     margin: 20px 0 0 0;
+    box-shadow: 12px -11px 0 0 #F3A5CB;
 }
 
 #architecture .vagrant {
@@ -306,4 +313,31 @@ p.definition {
 #problems .monkey {
     float: right;
     margin: 60px 0 0 0;
+}
+.pycon-logo {
+    float: left;
+    margin-top: 50px;
+    width: 190px;
+}
+.footer-notes {
+	font-size: 20px;
+	float: right;
+}
+.footer-notes.puppet {
+	margin-top: -35px;
+}
+img.vagrant-puppet {
+	float: right;
+	width: 30%;
+}
+code.pre.vagrant {
+	width: 65%;
+}
+img.ssd {
+	height: 80%;
+	margin: 0 auto;
+	display: block;
+}
+#introduction .footer-notes {
+    margin-top: 100px;
 }
