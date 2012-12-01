@@ -1,4 +1,10 @@
-# Bootstrap on Development or Test Machine (one time)
+#Django + Vagrant + Puppet + Fabric + VirtualEnv
+
+This repository contains a test django project (app folder) among example configuration files for puppet, vagrant and fabric.
+The main objetive of this project is to introduce on using isolated environments for multiple devs, projects and machines.
+
+
+# Bootstrap on dev machine (one time)
 
 ## Setup
 
@@ -26,5 +32,10 @@
 
 ## View
 
-    http://local.devpro.sophilabs.com/
+    browser: http://local.devpro.sophilabs.com/
 
+## Remote
+
+Run provision using fabric from dev machine (a dummy example)
+
+    fab dev provision
