@@ -183,24 +183,23 @@ p.definition {
 
 #introduction .names {
     display: block;
-    margin: 140px auto 0;
+    margin: 120px auto 0;
     width: 400px;
     height: 60px;
 }
 
 #introduction .names span {
+    display: block;
+    float: left;
+    width: 200px;
     height: 60px;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
-}
-
-#introduction .names a.github {
-	font-size: 22px;
 }
 
 #introduction .company {
     display: block;
-    margin: 0 auto;
+    margin: 60px auto 0;
     width: 400px;
     text-align: center;
 }
